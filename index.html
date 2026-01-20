@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BMI Calculator</title>
+
+  <!-- Inter Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            inter: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            primary: '#345FF6',
+            dark: '#253347',
+            text: '#5E6E85',
+            light: '#D8E2E7',
+          },
+        },
+      },
+    };
+  </script>
+</head>
+
+<body class="font-inter bg-white min-h-screen">
+
+<!-- ================= LOGO ================= -->
+<header class="p-8 flex justify-center md:justify-start max-w-7xl mx-auto">
+  <img src="Vector.svg" alt="Logo" class="w-12">
+</header>
+
+<!-- ================= SECTION 1 (GRADIENT) ================= -->
+<div class="bg-gradient-to-br from-white via-[#EAF2FF] to-[#D8E2E7] pb-32">
+
+<section class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+
+  <!-- Left text -->
+  <div class="text-center lg:text-left">
+    <h1 class="text-4xl md:text-5xl font-extrabold text-dark leading-tight mb-6">
+      Body Mass<br />Index Calculator
+    </h1>
+    <p class="text-text max-w-md mx-auto lg:mx-0">
+      Better understand your weight in relation to your height using our body mass index (BMI) calculator.
+      While BMI is not the sole determinant of a healthy weight, it offers a valuable starting point.
+    </p>
+  </div>
+
+  <!-- Card -->
+  <div class="bg-white rounded-3xl shadow-xl p-8 w-full">
+
+    <h2 class="text-xl font-bold text-dark mb-6">
+      Enter your details below
+    </h2>
+
+    <!-- Units -->
+    <div class="flex gap-8 mb-6">
+      <label class="flex items-center gap-3 cursor-pointer">
+        <input type="radio" checked class="accent-primary">
+        <span class="font-semibold text-dark">Metric</span>
+      </label>
+      <label class="flex items-center gap-3 cursor-pointer">
+        <input type="radio" class="accent-primary">
+        <span class="font-semibold text-dark">Imperial</span>
+      </label>
+    </div>
+
+    <!-- Inputs -->
+    <div class="grid md:grid-cols-2 gap-6">
+      <div>
+        <label class="text-text text-sm">Height</label>
+        <div class="flex items-center border border-light rounded-xl px-4 py-3 mt-1">
+          <input id="height" type="number" placeholder="185"
+                 class="w-full outline-none font-semibold text-dark">
+          <span class="text-primary font-bold">cm</span>
+        </div>
+      </div>
+
+      <div>
+        <label class="text-text text-sm">Weight</label>
+        <div class="flex items-center border border-light rounded-xl px-4 py-3 mt-1">
+          <input id="weight" type="number" placeholder="80"
+                 class="w-full outline-none font-semibold text-dark">
+          <span class="text-primary font-bold">kg</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- BMI RESULT -->
+    <div class="mt-8 relative overflow-hidden
+                bg-gradient-to-r from-[#345FF6] to-[#587DFF]
+                rounded-[52px]
+                p-6 md:p-8
+                flex flex-col md:flex-row md:items-center md:justify-between gap-4
+                text-white">
+
+      <div class="absolute -right-14 top-1/2 -translate-y-1/2
+                  w-72 h-72 bg-[#587DFF] rounded-full"></div>
+
+      <div class="relative z-10">
+        <p class="text-sm opacity-90">Your BMI is...</p>
+        <p id="bmi" class="text-5xl font-extrabold">23.4</p>
+      </div>
+
+      <p class="relative z-10 text-sm max-w-xs opacity-90">
+        Your BMI suggests you're a healthy weight.
+        Your ideal weight is between 63.3kgs – 85.2kgs.
+      </p>
+    </div>
+
+  </div>
+</section>
+</div>
+
+<!-- ================= SECTION 2 ================= -->
+<section class="max-w-7xl mx-auto px-6 mt-32 grid lg:grid-cols-2 gap-16 items-center">
+
+  <div class="relative flex justify-center">
+    <div class="absolute inset-0 bg-[#EAF6FB] rounded-3xl -z-10"></div>
+    <img src="Group 35.png"
+         alt="Healthy lifestyle"
+         class="rounded-3xl max-w-sm w-full object-cover">
+  </div>
+
+  <div class="text-center lg:text-left">
+    <h2 class="text-3xl md:text-4xl font-extrabold text-dark mb-6">
+      What your BMI result means
+    </h2>
+
+    <p class="text-text leading-relaxed max-w-lg mx-auto lg:mx-0">
+      A BMI range of 18.5 to 24.9 is considered a ‘healthy weight.’
+      Maintaining a healthy weight may lower your chances of experiencing
+      health issues later on, such as obesity and type 2 diabetes.
+      Aim for a nutritious diet with reduced fat and sugar content,
+      incorporating ample fruits and vegetables.
+      Additionally, strive for regular physical activity, ideally about
+      30 minutes daily for five days a week.
+    </p>
+  </div>
+
+</section>
+
+<!-- ================= SECTION 3 ================= -->
+<!-- ================= SECTION 3 ================= -->
+<section class="max-w-7xl mx-auto px-6 mt-32 grid grid-cols-1 md:grid-cols-3 gap-12 text-left">
+
+  <div class="flex flex-col space-y-4">
+    <img src="Group 40.png" class="w-16">
+    <h3 class="text-2xl font-bold text-slate-800">Healthy eating</h3>
+    <p class="text-slate-500 leading-relaxed">
+      Healthy eating promotes weight control, disease prevention, better digestion, immunity, mental clarity, and mood.
+    </p>
+  </div>
+
+  <div class="flex flex-col space-y-4">
+    <img src="Group 41.png" class="w-16">
+    <h3 class="text-2xl font-bold text-slate-800">Regular exercise</h3>
+    <p class="text-slate-500 leading-relaxed">
+      Exercise improves fitness, aids weight control, elevates mood, and reduces disease risk, fostering wellness and longevity.
+    </p>
+  </div>
+
+  <div class="flex flex-col space-y-4">
+    <img src="Group 42.png" class="w-16">
+    <h3 class="text-2xl font-bold text-slate-800">Adequate sleep</h3>
+    <p class="text-slate-500 leading-relaxed">
+      Sleep enhances mental clarity, emotional stability, and physical wellness, promoting overall restoration and rejuvenation.
+    </p>
+  </div>
+
+</section>
+
+
+<!-- ================= SCRIPT ================= -->
+<script>
+  const height = document.getElementById("height");
+  const weight = document.getElementById("weight");
+  const bmi = document.getElementById("bmi");
+
+  function calculateBMI() {
+    if (height.value && weight.value) {
+      bmi.textContent = (weight.value / ((height.value / 100) ** 2)).toFixed(1);
+    }
+  }
+
+  height.addEventListener("input", calculateBMI);
+  weight.addEventListener("input", calculateBMI);
+</script>
+
+</body>
+</html>
